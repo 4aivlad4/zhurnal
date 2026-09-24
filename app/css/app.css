@@ -5,6 +5,12 @@
   --color-text: #1a1a1a;
   --color-muted: #555555;
   --color-bg: #ffffff;
+  --color-border: #8a8a8a;
+  --color-ok-bg: #e3f4e6;
+  --color-ok-text: #14532d;
+  --color-error-bg: #fde8e8;
+  --color-error-text: #7f1d1d;
+  --color-note-bg: #fff4d6;
   color-scheme: light;
 }
 
@@ -21,29 +27,137 @@ body {
   background: var(--color-bg);
 }
 
-.start {
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 16px;
-  text-align: center;
+button,
+input {
+  font: inherit;
 }
 
-.start h1 {
-  margin: 0 0 16px;
-  font-size: 36px;
+button {
+  min-height: 56px;
+  padding: 8px 16px;
+  border: 2px solid var(--color-main);
+  border-radius: 12px;
+  background: var(--color-bg);
+  color: var(--color-main);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Главная кнопка экрана — на всю ширину, залитая. */
+.primary {
+  width: 100%;
+  margin-top: 8px;
+  background: var(--color-main);
+  color: #ffffff;
+}
+
+/* Второстепенная кнопка — без рамки, но такая же крупная. */
+.plain {
+  width: 100%;
+  margin-top: 8px;
+  border-color: transparent;
+}
+
+.screen {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+}
+
+.screen h1 {
+  margin: 0 0 4px;
+  font-size: 32px;
   line-height: 1.2;
   color: var(--color-main);
 }
 
-.start p {
-  margin: 0 0 8px;
+.screen h2 {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 600;
 }
 
-.version {
+.screen p {
+  margin: 0 0 12px;
+}
+
+.screen .label {
+  font-weight: 600;
+}
+
+/* Кнопки «Мама / Папа / Дочь / Другой» — по две в ряд. */
+.people {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.choice[aria-pressed="true"] {
+  background: var(--color-main);
+  color: #ffffff;
+}
+
+.field {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.field input {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 6px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  font-weight: 400;
+}
+
+.note {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--color-note-bg);
+}
+
+.screen .busy {
+  margin-top: 16px;
+  color: var(--color-muted);
+}
+
+.result {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.result.ok {
+  background: var(--color-ok-bg);
+  color: var(--color-ok-text);
+}
+
+.result.error {
+  background: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+
+.screen .result p:last-child {
+  margin-bottom: 0;
+}
+
+.result-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.screen .version {
+  margin-top: 32px;
   font-size: 16px;
   color: var(--color-muted);
 }
