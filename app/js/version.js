@@ -1,4 +1,4 @@
 // Номер версии приложения. Поднимать при любом изменении в app/ (docs/code-rules.md, п. 7):
 // по нему телефоны понимают, что пора скачать новые файлы сайта.
-export const VERSION = '0.0.1';
+export const VERSION = '0.0.2';
 export const VERSION_DATE = '2026-09-24';

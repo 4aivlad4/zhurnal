@@ -1,0 +1,22 @@
+// Правила доступа к базе Firestore: читать и писать могут только свои — по списку UID
+// (Firebase → Authentication → Users → User UID). Без входа база ничего не отдаёт.
+// Владелец вставляет этот текст в консоль: Firestore Database → Rules → Publish
+// (карточка docs/tasks/0.2-firebase.md, шаг 5). Меняются только вместе с владельцем.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isFamily() {
+      return request.auth != null
+        && request.auth.uid in [
+          'UID_MAMA',  // mama@example.com
+          'UID_PAPA',  // papa@example.com
+          'UID_DOCH',  // doch@example.com
+          'UID_ADMIN'  // владелец
+        ];
+    }
+
+    match /{document=**} {
+      allow read, write: if isFamily();
+    }
+  }
+}

@@ -1,19 +1,9 @@
 // Запуск приложения: рисует экран и включает работу без интернета.
-// Пока это заглушка — проверка, что Preact работает и сайт ставится иконкой.
+// Пока здесь временный экран «Проверка связи» с базой (задача 0.2).
 import { html, render } from '../vendor/preact-htm.js';
-import { VERSION } from './version.js';
+import { ConnectionCheck } from './ui/connection-check.js';
 
-function StartScreen() {
-  return html`
-    <main class="start">
-      <h1>Журнал центра</h1>
-      <p>Скоро здесь будет журнал записи.</p>
-      <p class="version">Версия ${VERSION}</p>
-    </main>
-  `;
-}
-
-render(html`<${StartScreen} />`, document.getElementById('app'));
+render(html`<${ConnectionCheck} />`, document.getElementById('app'));
 
 // Сервис-воркер (sw.js) хранит файлы сайта в телефоне. Если браузер его не умеет,
 // журнал всё равно работает — только без интернета не откроется.
