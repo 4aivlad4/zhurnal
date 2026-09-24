@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Значок «Журнал»: белая буква Ж на синем. Из него сделаны PNG-иконки в этой папке. -->
+  <rect width="512" height="512" rx="96" fill="#1f5f8b"/>
+  <path d="M256 128V384M144 128L232 256L144 384M368 128L280 256L368 384M232 256H280"
+        fill="none" stroke="#fff" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

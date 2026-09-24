@@ -1,0 +1,49 @@
+/* Общие стили журнала: крупный текст, высокий контраст, сначала телефон. */
+
+:root {
+  --color-main: #1f5f8b;
+  --color-text: #1a1a1a;
+  --color-muted: #555555;
+  --color-bg: #ffffff;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.start {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.start h1 {
+  margin: 0 0 16px;
+  font-size: 36px;
+  line-height: 1.2;
+  color: var(--color-main);
+}
+
+.start p {
+  margin: 0 0 8px;
+}
+
+.version {
+  font-size: 16px;
+  color: var(--color-muted);
+}
