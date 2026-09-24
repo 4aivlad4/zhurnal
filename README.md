@@ -4,6 +4,7 @@
 реабилитационного центра: расписание на телефоне у всей семьи, предупреждения
 о наложениях, помощь с переносами и обзвоном.
 
+- Сайт — https://4aivlad4.github.io/zhurnal/
 - Что и зачем — [docs/project.md](docs/project.md)
 - План и статус — [docs/plan.md](docs/plan.md)
 - Инструкция для владельца — [docs/owner-guide.md](docs/owner-guide.md)

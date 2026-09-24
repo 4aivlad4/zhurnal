@@ -1,0 +1,14 @@
+{
+  "name": "zhurnal",
+  "private": true,
+  "description": "Журнал центра — общий журнал записи пациентов (PWA)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\"",
+    "serve": "node tests/server.js",
+    "smoke": "node tests/smoke.js"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}
