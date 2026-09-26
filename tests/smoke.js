@@ -46,13 +46,13 @@ try {
   // 1. Первое открытие: заголовок, кнопки «Кто вы?», версия; файлы сохраняются в «телефоне».
   let page = await open();
   await expectText(page, '.version', `Версия ${VERSION}`);
-  await page.getByRole('button', { name: 'Мама', exact: true }).waitFor({ timeout: 5000 });
+  await page.getByRole('button', { name: 'Жаба 1', exact: true }).waitFor({ timeout: 5000 });
   await mkdir(SCREENSHOTS, { recursive: true });
   await page.screenshot({ path: path.join(SCREENSHOTS, 'start.png') });
   await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));
 
   // 2. Вход с неверным паролем — понятное сообщение, а не код ошибки.
-  await page.getByRole('button', { name: 'Мама', exact: true }).click();
+  await page.getByRole('button', { name: 'Жаба 1', exact: true }).click();
   await page.getByLabel('Пароль').fill('неверный');
   await page.getByRole('button', { name: 'Проверить' }).click();
   await expectText(page, '.result.error p:last-child', 'Неверный пароль или логин.');

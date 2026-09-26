@@ -5,10 +5,11 @@ import { checkConnection, isConfigured, onUser, signIn, signOut } from '../db-fi
 import { VERSION } from '../version.js';
 
 const OTHER = 'other';
+// Входы обезличены (Р-23): кто есть кто — не в коде, репозиторий публичный.
 const PEOPLE = [
-  { login: 'mama', name: 'Мама' },
-  { login: 'papa', name: 'Папа' },
-  { login: 'doch', name: 'Дочь' },
+  { login: 'jaba', name: 'Жаба 1' },
+  { login: 'jaba2', name: 'Жаба 2' },
+  { login: 'jaba3', name: 'Жаба 3' },
 ];
 const BUTTONS = [...PEOPLE, { login: OTHER, name: 'Другой' }];
 // Тип сети знает Chrome на Android (navigator.connection.type); на компьютере его обычно нет.
