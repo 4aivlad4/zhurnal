@@ -16,5 +16,6 @@ test('isFamily() требует вход и UID из списка', () => {
   assert.match(body, /request\.auth != null/);
   const uids = body.match(/'([^']*)'/g) ?? [];
   assert.ok(uids.length > 0, 'список UID пуст');
-  for (const uid of uids) assert.match(uid, /^'[A-Za-z0-9_]+'$/, `странный UID ${uid}`);
+  for (const uid of uids) assert.match(uid, /^'[A-Za-z0-9]{28}'$/, `странный UID ${uid}`);
+  assert.equal(new Set(uids).size, uids.length, 'UID повторяется');
 });

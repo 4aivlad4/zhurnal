@@ -4,13 +4,13 @@ import assert from 'node:assert/strict';
 import { emailToLogin, humanError, loginToEmail } from '../app/js/db-firebase.js';
 
 test('логин → почта: короткий логин получает @example.com, полная почта не меняется', () => {
-  assert.equal(loginToEmail('mama'), 'mama@example.com');
-  assert.equal(loginToEmail('  Papa '), 'papa@example.com');
+  assert.equal(loginToEmail('jaba'), 'jaba@example.com');
+  assert.equal(loginToEmail('  Jaba2 '), 'jaba2@example.com');
   assert.equal(loginToEmail('Someone@Mail.ru'), 'someone@mail.ru');
 });
 
 test('почта → логин: @example.com убирается, другая почта остаётся целиком', () => {
-  assert.equal(emailToLogin('doch@example.com'), 'doch');
+  assert.equal(emailToLogin('jaba3@example.com'), 'jaba3');
   assert.equal(emailToLogin('someone@mail.ru'), 'someone@mail.ru');
   assert.equal(emailToLogin(''), '');
 });

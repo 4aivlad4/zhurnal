@@ -20,7 +20,7 @@ import {
 } from '../vendor/firebase/firebase-firestore.js';
 import { firebaseConfig } from './config.js';
 
-// Почты для входа выдуманные, письма на них не приходят: «mama» → mama@example.com.
+// Почты для входа выдуманные, письма на них не приходят: «jaba» → jaba@example.com.
 const LOGIN_DOMAIN = '@example.com';
 // Дольше не ждём: человеку нужен понятный ответ, а не бесконечное «Проверяю…».
 const TIMEOUT_MS = 15000;
@@ -48,13 +48,13 @@ function connect() {
   });
 }
 
-// «mama» → mama@example.com; полная почта остаётся как есть.
+// «jaba» → jaba@example.com; полная почта остаётся как есть.
 export function loginToEmail(login) {
   const clean = login.trim().toLowerCase();
   return clean.includes('@') ? clean : clean + LOGIN_DOMAIN;
 }
 
-// mama@example.com → «mama»; почта с другим доменом остаётся целиком.
+// jaba@example.com → «jaba»; почта с другим доменом остаётся целиком.
 export function emailToLogin(email) {
   return email.endsWith(LOGIN_DOMAIN) ? email.slice(0, -LOGIN_DOMAIN.length) : email;
 }

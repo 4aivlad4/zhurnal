@@ -8,10 +8,10 @@ service cloud.firestore {
     function isFamily() {
       return request.auth != null
         && request.auth.uid in [
-          'UID_MAMA',  // mama@example.com
-          'UID_PAPA',  // papa@example.com
-          'UID_DOCH',  // doch@example.com
-          'UID_ADMIN'  // владелец
+          'etgWzTUIxIWo6oJhyzrCk9Gr89d2',  // jaba@example.com — «Жаба 1»
+          'oCwFmkeE6tN8u63Z3EDaU8ExWbn1',  // jaba2@example.com — «Жаба 2»
+          '7Q3W5VG9RbRur0g5YRNBYa1VFql1',  // jaba3@example.com — «Жаба 3»
+          'PbTrhmWi2OhxeJglwy98v56CSdp1'   // admin@example.com — владелец («Другой»)
         ];
     }
 
